@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao Jogo de Perguntas</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background: url(https://cdnb.artstation.com/p/assets/images/images/024/538/827/original/pixel-jeff-clipa-s.gif?1582740711&dl=1);
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #container {
+            background-color: #343a91ee;
+            border-radius: 26px;
+            padding: 20px;
+            margin: 50px auto;
+            box-shadow: 0 0 60px purple;
+            max-width: 600px;
+            border: 5px solid #5d81b18e;
+        }
+
+        #comecar-btn {
+            background-color: #4CAF50; 
+            color: white; 
+            padding: 10px 15px; 
+            border: none; 
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #comecar-btn:hover {
+            background-color: #2e6c31;
+        }
+
+        h1{
+            color: white;
+            text-align: center;
+        }
+
+        p{
+            color: white;
+            text-align: center;
+        }
+
+        img{
+            width: 50%;
+            border-radius: 20px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <h1>Bem-vindo ao Jogo de Perguntas!</h1>
+        <img src="https://i.pinimg.com/originals/6b/d2/e9/6bd2e9cecbb491093289b8b3dcc54083.gif">
+        <p>Clique em "Começar" para iniciar o jogo.</p>
+        <button id="comecar-btn" onclick="redirecionarParaJogo()">Começar</button>
+    </div>
+
+    <script>
+        function redirecionarParaJogo() {
+            window.location.href = 'pergunta1.html';
+        }
+    </script>
+
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERGUNTA 1</title>
+    <link rel="stylesheet" href="style11.css">
+</head>
+<body>
+
+    <div id="pergunta">
+        <h2>Qual foi o primeiro console de videogame criado?</h2>
+        <img src="https://t.ctcdn.com.br/jkymVMNL6Y3m5irj6A9Boi0qFic=/1200x675/smart/i550284.png" alt="Consoleold">
+        <ul>
+            <li onclick="verificarResposta('Opção 1')">Atari</li>
+            <li onclick="verificarResposta('Opção 2')">NES: Nintendo Entertainment System</li>
+            <li onclick="verificarResposta('Opção 3')">Magnavox Odyssey</li>
+        </ul>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2 id="modal-titulo">Explicação</h2>
+            <p id="modal-texto">Desenvolvido entre 1966 e 1968, mas lançado somente em 1972, Odyssey é foi o primeiro console doméstico reconhecido mundialmente pela indústria de jogos eletrônicos. Entretanto, por ter sido fabricado pela Magnavox, alguns referem-se ao aparelho como Magnavox Odyssey</p>
+            <button onclick="proximoJogo()">Próxima Pergunta</button>
+        </div>
+    </div>
+
+    <script>
+       
+        function exibirModal(titulo, texto) {
+            modalTitulo.textContent = titulo;
+            modalTexto.textContent = texto;
+            modal.style.display = 'flex';
+        }
+        
+        function verificarResposta(respostaSelecionada) {
+    if (respostaSelecionada === 'Opção 3') {
+        alert('Parabéns!! Você acertou!!');
+        window.location.href = 'Pergunta2.html';
+    } else {
+        const confirmacao = confirm('Ops, resposta incorreta! Deseja ver a explicação?');
+        if (confirmacao) {
+            exibirModal('Explicação', 'Desenvolvido entre 1966 e 1968, mas lançado somente em 1972, Odyssey é foi o primeiro console doméstico reconhecido mundialmente pela indústria de jogos eletrônicos. Entretanto, por ter sido fabricado pela Magnavox, alguns referem-se ao aparelho como Magnavox Odyssey');
+        }
+    }
+}
+
+        function proximoJogo() {
+            window.location.href = 'Pergunta2.html';
+        }
+    </script>
+
+    <head>
+        <div id="pergunta">
+            <h2>Qual é a empresa pioneira dos jogos de videogame?</h2>
+            <img src="https://f.i.uol.com.br/fotografia/2023/04/20/16820387716441dff336782_1682038771_16x9_md.jpg" alt="Empressa">
+            <ul>
+                <li onclick="verificarResposta('Opção 1')">Atari</li>
+                <li onclick="verificarResposta('Opção 2')">Sega</li>
+                <li onclick="verificarResposta('Opção 3')">Nintendo</li>
+            </ul>
+        </div>
+    
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <h2 id="modal-titulo">Explicação</h2>
+                <p id="modal-texto">A Atari foi fundada em 1972 por Nolan Bushnell e Ted Dabney, nos Estados Unidos. A marca, que se tornou pioneira do mercado de consoles de videogame domésticos e jogos eletrônicos, teve vários donos ao longo de sua história</p>
+                <button onclick="proximoJogo()">Próxima Pergunta</button>
+            </div>
+        </div>
+    
+        <script>
+           
+            function exibirModal(titulo, texto) {
+                modalTitulo.textContent = titulo;
+                modalTexto.textContent = texto;
+                modal.style.display = 'flex';
+            }
+            
+            function verificarResposta(respostaSelecionada) {
+        if (respostaSelecionada === 'Opção 1') {
+            alert('Parabéns!! Você acertou!!');
+            window.location.href = 'Pergunta3.html';
+        } else {
+            const confirmacao = confirm('Ops, resposta incorreta! Deseja ver a explicação?');
+            if (confirmacao) {
+                exibirModal('Explicação', 'A Atari foi fundada em 1972 por Nolan Bushnell e Ted Dabney, nos Estados Unidos. A marca, que se tornou pioneira do mercado de consoles de videogame domésticos e jogos eletrônicos, teve vários donos ao longo de sua história');
+            }
+        }
+    }
+    
+            function proximoJogo() {
+                window.location.href = 'Pergunta3.html';
+            }
+        </script>
+
+<div id="pergunta">
+    <h2>Qual foi o primeiro jogo de vídeo comercializado com sucesso?</h2>
+    <img src="https://conteudo.imguol.com.br/c/noticias/be/2022/09/30/propaganda-do-magnavox-odyssey-o-primeiro-videogame-domestico-comercializado-de-1972-1664577628831_v2_615x300.png" alt="Empressa">
+    <ul>
+        <li onclick="verificarResposta('Opção 1')">Donkey Kong</li>
+        <li onclick="verificarResposta('Opção 2')">Pong</li>
+        <li onclick="verificarResposta('Opção 3')">Pac Man</li>
+    </ul>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2 id="modal-titulo">Explicação</h2>
+        <p id="modal-texto">A Atari criou uma versão nova do jogo e a distribuiu na forma de máquina arcade, com enorme sucesso comercial. Pong é um game fundamental, pois sedimentou as bases da empresa que dominaria o mercado de games durante toda a década</p>
+        <button onclick="proximoJogo()">Próxima Pergunta</button>
+    </div>
+</div>
+
+<script>
+   
+    function exibirModal(titulo, texto) {
+        modalTitulo.textContent = titulo;
+        modalTexto.textContent = texto;
+        modal.style.display = 'flex';
+    }
+    
+    function verificarResposta(respostaSelecionada) {
+if (respostaSelecionada === 'Opção 2') {
+    alert('Parabéns!! Você acertou!!');
+    window.location.href = 'Pergunta4.html';
+} else {
+    const confirmacao = confirm('Ops, resposta incorreta! Deseja ver a explicação?');
+    if (confirmacao) {
+        exibirModal('Explicação', 'A Atari criou uma versão nova do jogo e a distribuiu na forma de máquina arcade, com enorme sucesso comercial. Pong é um game fundamental, pois sedimentou as bases da empresa que dominaria o mercado de games durante toda a década');
+    }
+}
+}
+
+    function proximoJogo() {
+        window.location.href = 'Pergunta4.html';
+    }
+</script>
+<div id="pergunta">
+    <h2>Qual empresa lançou e projetou Pac-Man?</h2>
+    <img src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/06/5363_7D66C7F21A0BD4A2.jpg?w=1200&h=1200&crop=1" alt="Pacman">
+    <ul>
+        <li onclick="verificarResposta('Opção 1')">Namco</li>
+        <li onclick="verificarResposta('Opção 2')">Konami</li>
+        <li onclick="verificarResposta('Opção 3')">Game Freak</li>
+    </ul>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2 id="modal-titulo">Explicação</h2>
+        <p id="modal-texto">A “planta” para o desenvolvimento do game foi produzida em 1979, um ano antes do lançamento do jogo, em 1980</p>
+        <button onclick="proximoJogo()">Próxima Pergunta</button>
+    </div>
+</div>
+
+<script>
+    
+    function exibirModal(titulo, texto) {
+        modalTitulo.textContent = titulo;
+        modalTexto.textContent = texto;
+        modal.style.display = 'flex';
+    }
+    
+    function verificarResposta(respostaSelecionada) {
+if (respostaSelecionada === 'Opção 1') {
+    alert('Parabéns!! Você acertou!!');
+    window.location.href = 'Pergunta5.html';
+} else {
+    const confirmacao = confirm('Ops, resposta incorreta! Deseja ver a explicação?');
+    if (confirmacao) {
+        exibirModal('Explicação', 'A “planta” para o desenvolvimento do game foi produzida em 1979, um ano antes do lançamento do jogo, em 1980');
+    }
+}
+}
+
+    function proximoJogo() {
+        window.location.href = 'Pergunta5.html';
+    }
+</script>
+
+<div id="pergunta">
+    <h2>Quantos títulos a franquia Castlevania possuí até os dias de hoje?</h2>
+    <img src="https://tm.ibxk.com.br/2023/10/06/06013527073019.jpg" alt="Castlevania">
+    <ul>
+        <li onclick="verificarResposta('Opção 1')">30</li>
+        <li onclick="verificarResposta('Opção 2')">25</li>
+        <li onclick="verificarResposta('Opção 3')">33</li>
+    </ul>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2 id="modal-titulo">Explicação</h2>
+        <p id="modal-texto">Muitos títulos de Castlevania foram lançados para os mercados do Japão, América do Norte, Europa, e Austrália, em vários consoles, PC e plataformas móveis, com remakes adicionais e relançamentos.[1] O primeiro título de console, Castlevania (1986), foi lançado no Japão para Famicom Disk System em 1986 e na América do Norte para NES em 1987,[2] apresentando gráficos 2D e gênero de ação, além de algumas das principais características que a série viria a reutilizar. Atualmente temos 33 títulos da franquia Castlevania sem contar com as animações mais recentes</p>
+        <button onclick="proximoJogo()">Próxima Pergunta</button>
+    </div>
+</div>
+
+<script>
+    
+    function exibirModal(titulo, texto) {
+        modalTitulo.textContent = titulo;
+        modalTexto.textContent = texto;
+        modal.style.display = 'flex';
+    }
+    
+    function verificarResposta(respostaSelecionada) {
+if (respostaSelecionada === 'Opção 3') {
+    alert('Parabéns!! Você acertou!!');
+    window.location.href = 'Pergunta7.html';
+} else {
+    const confirmacao = confirm('Ops, resposta incorreta! Deseja ver a explicação?');
+    if (confirmacao) {
+        exibirModal('Explicação', 'Muitos títulos de Castlevania foram lançados para os mercados do Japão, América do Norte, Europa, e Austrália, em vários consoles, PC e plataformas móveis, com remakes adicionais e relançamentos.[1] O primeiro título de console, Castlevania (1986), foi lançado no Japão para Famicom Disk System em 1986 e na América do Norte para NES em 1987,[2] apresentando gráficos 2D e gênero de ação, além de algumas das principais características que a série viria a reutilizar. Atualmente temos 33 títulos da franquia Castlevania sem contar com as animações mais recentes');
+    }
+}
+}
+
+    function proximoJogo() {
+        window.location.href = 'Pergunta7.html';
+    }
+</script>
+<div id="pergunta">
+    <h2>Quais são os consoles mais famosos no anos 90?</h2>
+    <img src="https://cultura.uol.com.br/upload/tvcultura/entretenimento/20210630183106_capa-site-64.jpg" alt="Conlidoo">
+    <ul>
+        <li onclick="verificarResposta('Opção 1')">Super Nintendo, PlayStation, Steam Deck e Nintendo 3DS</li>
+        <li onclick="verificarResposta('Opção 2')">Super Nintendo, Mega Drive, PlayStation 1 e Nintendo 64</li>
+        <li onclick="verificarResposta('Opção 3')">Nintendo DS, Mega Drive, Playstation e Xbox 360</li>
+    </ul>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2 id="modal-titulo">Explicação</h2>
+        <p id="modal-texto">Consoles como o Super Nintendo, Mega Drive, PlayStation 1 e Nintendo 64, além do PC, foram plataformas revolucionárias e guardam verdadeira pérolas dos mais diversos gêneros, ao passo que as máquinas de fliperama ajudavam a democratizar o acesso aos games por poucos centavos</p>
+        <button onclick="proximoJogo()">Próxima Pergunta</button>
+    </div>
+</div>
+
+<script>
+    
+
+    function exibirModal(titulo, texto) {
+        modalTitulo.textContent = titulo;
+        modalTexto.textContent = texto;
+        modal.style.display = 'flex';
+    }
+    
+    function verificarResposta(respostaSelecionada) {
+if (respostaSelecionada === 'Opção 2') {
+    alert('Parabéns!! Você acertou!!');
+    window.location.href = 'Pergunta8.html';
+} else {
+    const confirmacao = confirm('Ops, resposta incorreta! Deseja ver a explicação?');
+    if (confirmacao) {
+        exibirModal('Explicação', 'Consoles como o Super Nintendo, Mega Drive, PlayStation 1 e Nintendo 64, além do PC, foram plataformas revolucionárias e guardam verdadeira pérolas dos mais diversos gêneros, ao passo que as máquinas de fliperama ajudavam a democratizar o acesso aos games por poucos centavos');
+    }
+}
+}
+
+    function proximoJogo() {
+        window.location.href = 'Pergunta8.html';
+    }
+</script>
+<div id="pergunta">
+    <h2>Qual é o jogo de Luta Super Nintendo mais conhecido?</h2>
+    <img src="https://cdn.ligadosgames.com/imagens/melhores-jogos-super-nintendo-og.jpg" alt="fighto">
+    <ul>
+        <li onclick="verificarResposta('Opção 1')">Street Fighter 2</li>
+        <li onclick="verificarResposta('Opção 2')">Melty Blood</li>
+        <li onclick="verificarResposta('Opção 3')">Ultimate Mortal Kombat 3</li>
+    </ul>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2 id="modal-titulo">Explicação</h2>
+        <p id="modal-texto">O Ultimate no nome sugere que essa versão era a mais completa de todas. E era: no Super Nintendo era o Mortal Kombat com o maior número de lutadores de todos. Em termos gráficos era bem desenhado</p>
+        <button onclick="proximoJogo()">Próxima Pergunta</button>
+    </div>
+</div>
+
+<script>
+    
+    function exibirModal(titulo, texto) {
+        modalTitulo.textContent = titulo;
+        modalTexto.textContent = texto;
+        modal.style.display = 'flex';
+    }
+    
+    function verificarResposta(respostaSelecionada) {
+if (respostaSelecionada === 'Opção 3') {
+    alert('Parabéns!! Você acertou!!');
+    window.location.href = 'Pergunta9.html';
+} else {
+    const confirmacao = confirm('Ops, resposta incorreta! Deseja ver a explicação?');
+    if (confirmacao) {
+        exibirModal('Explicação', 'O Ultimate no nome sugere que essa versão era a mais completa de todas. E era: no Super Nintendo era o Mortal Kombat com o maior número de lutadores de todos. Em termos gráficos era bem desenhado');
+    }
+}
+}
+
+    function proximoJogo() {
+        window.location.href = 'Pergunta9.html';
+    }
+</script>
+<div id="pergunta">
+    <h2>Qual foi o ano de lançamento do Super Mario Bros?</h2>
+    <img src="https://jpimg.com.br/uploads/2017/09/gammasquadsupermarioff1.jpg" alt=mariotepegouatrasdoarmario">
+    <ul>
+        <li onclick="verificarResposta('Opção 1')">1985</li>
+        <li onclick="verificarResposta('Opção 2')">1979</li>
+        <li onclick="verificarResposta('Opção 3')">1992</li>
+    </ul>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2 id="modal-titulo">Explicação</h2>
+        <p id="modal-texto">Mario aparece pela primeira vez como “Jumpman” no jogo “Donkey Kong”, no qual ele precisa salvar sua namorada “Pauline” do gorila. Originalmente, ele era carpinteiro. No entanto, ao entrar nos canos em seu próprio jogo, “Mario Bros”, passou a ser considerado um encanador</p>
+        <button onclick="proximoJogo()">Próxima Pergunta</button>
+    </div>
+</div>
+
+<script>
+    const modal = document.getElementById('modal');
+    const modalTitulo = document.getElementById('modal-titulo');
+    const modalTexto = document.getElementById('modal-texto');
+
+    function exibirModal(titulo, texto) {
+        modalTitulo.textContent = titulo;
+        modalTexto.textContent = texto;
+        modal.style.display = 'flex';
+    }
+    
+    function verificarResposta(respostaSelecionada) {
+if (respostaSelecionada === 'Opção 1') {
+    alert('Parabéns!! Você acertou!!');
+    window.location.href = 'Pergunta11.html';
+} else {
+    const confirmacao = confirm('Ops, resposta incorreta! Deseja ver a explicação?');
+    if (confirmacao) {
+        exibirModal('Explicação', 'Mario aparece pela primeira vez como “Jumpman” no jogo “Donkey Kong”, no qual ele precisa salvar sua namorada “Pauline” do gorila. Originalmente, ele era carpinteiro. No entanto, ao entrar nos canos em seu próprio jogo, “Mario Bros”, passou a ser considerado um encanador');
+    }
+}
+}
+
+    function proximoJogo() {
+        window.location.href = 'Pergunta11.html';
+    }
+</script>
+<div id="pergunta">
+    <h2>Quando o e-Sports ficou popular no Brasil?</h2>
+    <img src="https://s2-techtudo.glbimg.com/GXrQjBZk4GZnb5y89u4VtUjchgg=/0x0:695x464/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/E/1/QqihwcSgSBrTDzkP0NSw/2015-10-28-dota-2-campeonato.jpg" alt="ESports">
+    <ul>
+        <li onclick="verificarResposta('Opção 1')">1990</li>
+        <li onclick="verificarResposta('Opção 2')">2011</li>
+        <li onclick="verificarResposta('Opção 3')">2014</li>
+    </ul>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2 id="modal-titulo">Explicação</h2>
+        <p id="modal-texto">O Esports começou a crescer desde 2011, quando os desenvolvedores de jogos eletrônicos Valve e Riot Games chegou no Brasil</p>
+        <button onclick="proximoJogo()">Próxima Pergunta</button>
+    </div>
+</div>
+
+<script>
+
+    function exibirModal(titulo, texto) {
+        modalTitulo.textContent = titulo;
+        modalTexto.textContent = texto;
+        modal.style.display = 'flex';
+    }
+    
+    function verificarResposta(respostaSelecionada) {
+if (respostaSelecionada === 'Opção 2') {
+    alert('Parabéns!! Você acertou!!');
+    window.location.href = 'Pergunta12.html';
+} else {
+    const confirmacao = confirm('Ops, resposta incorreta! Deseja ver a explicação?');
+    if (confirmacao) {
+        exibirModal('Explicação', 'O Esports começou a crescer desde 2011, quando os desenvolvedores de jogos eletrônicos Valve e Riot Games chegou no Brasil');
+    }
+}
+}
+
+
+    function proximoJogo() {
+        window.location.href = 'Pergunta12.html';
+    }
+</script>
+<div id="pergunta">
+    <h2>Quais são os MMORPGs mais jogados no mundo atualmente?</h2>
+    <img src="https://cdn.ligadosgames.com/imagens/the-lord-of-the-rings-online-0-cke.jpg" alt="MMORPG">
+    <ul>
+        <li onclick="verificarResposta('Opção 1')">Lost Ark e Albion Online</li>
+        <li onclick="verificarResposta('Opção 2')">Diablo Immortal e The Elder Scrolls Online</li>
+        <li onclick="verificarResposta('Opção 3')">World of Warcraft e Final Fantasy XIV</li>
+    </ul>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2 id="modal-titulo">Explicação</h2>
+        <p id="modal-texto">WoW e FFXIV foram os melhores jogos de MMORPG que atraiu milhares de jogadores. Cada um aborda diversas mecânicas, mas pode se dizer que os dois ainda brigam no pedestral dos melhores MMORPGS da atualidade</p>
+        <button onclick="proximoJogo()">Próxima Pergunta</button>
+    </div>
+</div>
+
+<script>
+   
+    function exibirModal(titulo, texto) {
+        modalTitulo.textContent = titulo;
+        modalTexto.textContent = texto;
+        modal.style.display = 'flex';
+    }
+    
+    function verificarResposta(respostaSelecionada) {
+if (respostaSelecionada === 'Opção 3') {
+    alert('Parabéns!! Você acertou!!');
+    window.location.href = 'Pergunta13.html';
+} else {
+    const confirmacao = confirm('Ops, resposta incorreta! Deseja ver a explicação?');
+    if (confirmacao) {
+        exibirModal('Explicação', 'WoW e FFXIV foram os melhores jogos de MMORPG que atraiu milhares de jogadores. Cada um aborda diversas mecânicas, mas pode se dizer que os dois ainda brigam no pedestral dos melhores MMORPGS da atualidade');
+    }
+}
+}
+
+
+    function proximoJogo() {
+        window.location.href = 'Pergunta13.html';
+    }
+</script>
+<div id="pergunta">
+    <h2>Qual o melhor jogo do Playstation considerado atualmente?</h2>
+    <img src="https://t.ctcdn.com.br/g1jOy_-GUWnZkbQxYTEN2rV-mqE=/1980x1114/smart/i569020.png" alt="PS5">
+    <ul>
+        <li onclick="verificarResposta('Opção 1')">The Last of Us Part II</li>
+        <li onclick="verificarResposta('Opção 2')">Fortnite</li>
+        <li onclick="verificarResposta('Opção 3')">Final Fantasy XVI</li>
+    </ul>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2 id="modal-titulo">Explicação</h2>
+        <p id="modal-texto">TLOUII foi considerado pelo fãs como o melhor jogo da atualidade até ser outros títulos começaram a substituir o título</p>
+        <button onclick="proximoJogo()">Próxima Pergunta</button>
+    </div>
+</div>
+
+<script>
+  
+    function exibirModal(titulo, texto) {
+        modalTitulo.textContent = titulo;
+        modalTexto.textContent = texto;
+        modal.style.display = 'flex';
+    }
+    
+    function verificarResposta(respostaSelecionada) {
+if (respostaSelecionada === 'Opção 1') {
+    alert('Parabéns!! Você acertou!!');
+    window.location.href = 'Pergunta14.html';
+} else {
+    const confirmacao = confirm('Ops, resposta incorreta! Deseja ver a explicação?');
+    if (confirmacao) {
+        exibirModal('Explicação', 'TLOUII foi considerado pelo fãs como o melhor jogo da atualidade até ser outros títulos começaram a substituir o título');
+    }
+}
+}
+
+    function proximoJogo() {
+        window.location.href = 'Pergunta14.html';
+    }
+</script>
+<div id="pergunta">
+    <h2>Qual é gênero mais popular de jogos atualmente?</h2>
+    <img src="https://www.oficinadanet.com.br/imagens/post/32473/categorias-games.jpg" alt="Games">
+    <ul>
+        <li onclick="verificarResposta('Opção 1')">Ação e Aventura</li>
+        <li onclick="verificarResposta('Opção 2')">RPG</li>
+        <li onclick="verificarResposta('Opção 3')">FPS</li>
+    </ul>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2 id="modal-titulo">Explicação</h2>
+        <p id="modal-texto">Colocaram o gênero de Ação e Aventura em primeiro lugar, tanto por ser uma categoria abrangente que engloba muitos tipos diferentes de jogos, como por ser um gênero muito associado aos jogos 'premium' tradicionais, vendidos em disco ou mesmo em formato digital</p>
+        <button onclick="proximoJogo()">Próxima Pergunta</button>
+    </div>
+</div>
+
+<script>
+  
+    function exibirModal(titulo, texto) {
+        modalTitulo.textContent = titulo;
+        modalTexto.textContent = texto;
+        modal.style.display = 'flex';
+    }
+    
+    function verificarResposta(respostaSelecionada) {
+if (respostaSelecionada === 'Opção 1') {
+    alert('Parabéns!! Você acertou!!');
+    window.location.href = 'Pergunta15.html';
+} else {
+    const confirmacao = confirm('Ops, resposta incorreta! Deseja ver a explicação?');
+    if (confirmacao) {
+        exibirModal('Explicação', 'Colocaram o gênero de Ação e Aventura em primeiro lugar, tanto por ser uma categoria abrangente que engloba muitos tipos diferentes de jogos, como por ser um gênero muito associado aos jogos premium tradicionais, vendidos em disco ou mesmo em formato digital');
+    }
+}
+}
+
+
+    function proximoJogo() {
+        window.location.href = 'Pergunta15.html';
+    }
+</script>
+<div id="pergunta">
+    <h2>Qual console mais desejado atualmente?</h2>
+    <img src="https://t2.tudocdn.net/607940?w=824&h=494" alt="MMORPG">
+    <ul>
+        <li onclick="verificarResposta('Opção 1')">Playstation 5</li>
+        <li onclick="verificarResposta('Opção 2')">Nintendo Switch</li>
+        <li onclick="verificarResposta('Opção 3')">XBOX Series S</li>
+    </ul>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2 id="modal-titulo">Explicação</h2>
+        <p id="modal-texto">O Nintendo Switch é o console Nº1 e o console mais desejado em 51 países. O Xbox Series S, a versão simplificada do Xbox Series X, mais potente, está em segundo lugar na classificação global, ocupando o primeiro lugar em 38 países, incluindo Argentina, Brasil, Colômbia, México, Paraguai e Uruguai</p>
+        <button onclick="proximoJogo()">Finalizar</button>
+    </div>
+</div>
+
+<script>
+ 
+    function exibirModal(titulo, texto) {
+        modalTitulo.textContent = titulo;
+        modalTexto.textContent = texto;
+        modal.style.display = 'flex';
+    }
+    
+    function verificarResposta(respostaSelecionada) {
+if (respostaSelecionada === 'Opção 2') {
+    alert('Parabéns!! Você concluiu o jogo!!');
+    window.location.href = 'Fim.html';
+} else {
+    const confirmacao = confirm('Ops, resposta incorreta! Deseja ver a explicação?');
+    if (confirmacao) {
+        exibirModal('Explicação', 'O Nintendo Switch é o console Nº1 e o console mais desejado em 51 países. O Xbox Series S, a versão simplificada do Xbox Series X, mais potente, está em segundo lugar na classificação global, ocupando o primeiro lugar em 38 países, incluindo Argentina, Brasil, Colômbia, México, Paraguai e Uruguai');
+    }
+}
+}
+
+
+    function proximoJogo() {
+        window.location.href = 'Fim.html';
+    }
+</script>
+</body>
+</html>
+
+
+</body>
+</html>
